@@ -96,12 +96,22 @@
 
 		
 		OBJ = wt(1)*f1+wt(2)*f2+wt(3)*f3
+!		OBJ = f1+f2+f3
 
 		IF(iflag == 0) THEN
 			OPEN(85, FILE="RSMInTest.dat", STATUS='OLD', POSITION='APPEND')
 			WRITE(85,*)X,f1,f2,f3
 		!	WRITE(*,*)'Write X:',X
 			CLOSE(85)
+		END IF
+		iflag=0
+		open(106,file="swtch.dat",status='OLD')
+		read(106,*)iflag
+		close(106)
+		IF(iflag > 0) THEN
+			open(105,file="madsoutput.dat",status='OLD',position='APPEND')
+			WRITE(105,*)X,f1,f2,f3
+			CLOSE(105)
 		END IF
 
 		DEALLOCATE(XX)
