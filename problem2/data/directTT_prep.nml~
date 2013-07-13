@@ -1,0 +1,21 @@
+! directTEST.nml: namelist for calling VTDIRECT to optimize 
+! a 3-dimensional MOP
+&PROBLEM
+N=12
+LB(1:12)=0,0,0,0,0,0,0,0,0,0,0,0
+UB(1:12)=1,1,1,1,1,1,1,1,1,1,1,1
+/
+&OPTPARM
+iter_lim=0
+eval_lim=100
+diam_lim=0.0
+objf_conv=0
+eps_fmin=0.1
+c_switch=1
+min_sep=0.0
+weight(1:12)=1,1,1,1,1,1,1,1,1,1,1,1
+n_optbox=1
+/
+&CHKPTOP
+chkpt_start=0
+/

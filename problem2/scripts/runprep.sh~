@@ -1,0 +1,6 @@
+#!/bin/bash
+cd $NOMAD_WORKSPACE
+./problem2/VTDIRECT/tmain
+cp RSMInTest.dat input.dat
+perl ./problem2/scripts/paretofront.pl
+
