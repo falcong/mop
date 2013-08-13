@@ -10,12 +10,14 @@ perl /home/shubhangi/nomad.3.5.1/examples/interfaces/FORTRAN/MOP/problem2/script
 perl /home/shubhangi/nomad.3.5.1/examples/interfaces/FORTRAN/MOP/problem2/scripts/gentr.pl
 perl /home/shubhangi/nomad.3.5.1/examples/interfaces/FORTRAN/MOP/problem2/scripts/copylncnt.pl tregion.dat
 /home/shubhangi/nomad.3.5.1/examples/interfaces/FORTRAN/MOP/problem2/VTDIRECT/GenSur
+
 /home/shubhangi/nomad.3.5.1/examples/interfaces/FORTRAN/MOP/problem2/NOMAD/test.exe
 perl /home/shubhangi/nomad.3.5.1/examples/interfaces/FORTRAN/MOP/problem2/scripts/rmdups.pl RSMOutTest.dat
 perl /home/shubhangi/nomad.3.5.1/examples/interfaces/FORTRAN/MOP/problem2/scripts/copylncnt.pl RSMOutTest.dat
 perl /home/shubhangi/nomad.3.5.1/examples/interfaces/FORTRAN/MOP/problem2/scripts/copylncnt.pl RSMOutTest1.dat
-#/home/shubhangi/nomad.3.5.1/examples/interfaces/FORTRAN/MOP/problem2/VTDIRECT/EvalSur
-perl /home/shubhangi/nomad.3.5.1/examples/interfaces/FORTRAN/MOP/problem2/scripts/evalsur.pl
+
+#perl /home/shubhangi/nomad.3.5.1/examples/interfaces/FORTRAN/MOP/problem2/scripts/evalsur.pl
+#perl /home/shubhangi/nomad.3.5.1/examples/interfaces/FORTRAN/MOP/problem2/scripts/updtTR.pl
 
 /home/shubhangi/nomad.3.5.1/examples/interfaces/FORTRAN/MOP/problem2/VTDIRECT/tskyline
 cp blank.dat lshepwa.dat
@@ -25,3 +27,6 @@ cp blank.dat RSMOutTest.dat
 cp RSMInTest.dat input.dat
 perl /home/shubhangi/nomad.3.5.1/examples/interfaces/FORTRAN/MOP/problem2/scripts/paretofront.pl
 
+
+
+#/home/shubhangi/nomad.3.5.1/examples/interfaces/FORTRAN/MOP/problem2/VTDIRECT/EvalSur

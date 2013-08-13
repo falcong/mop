@@ -6,7 +6,7 @@ n=size(X,1);
 Y=XX(:,ndv+1:ndv+2);
 Yc=zeros(3);
 for i=1:n
-	if X(i,3)<=0.0000000000001 
+	if X(i,3)<=0.0000000001 
 		Y(i,1)=Y(i,1)-X(i,3)+1;
 		Y(i,2)=Y(i,2)-X(i,3)+1;
 		X(i,3)=X(i,3)-X(i,3)+1;
@@ -96,6 +96,10 @@ if(flg)
 					dlmwrite('Xc.dat',YY,'delimiter',' ');								
 					Xc=Xi;
 					break;
+				else
+%					disp('found elsecase');
+					found=0;
+					continue;
 				end						
 			else
 				for i=1:size(YY,1)
@@ -107,6 +111,8 @@ if(flg)
 					end
 				end
 				if iflg>0
+					iflg=0;
+					found=0;
 					continue;				
 				else
 					Xc=Xi;
@@ -140,15 +146,16 @@ for i=1:n
 			if D(:,j)>0
 				csum=csum+(1/D(:,j));
 			else
-				WT(j)=0.2;
+%				WT(j)=0.2;
+				WT(j)=0.0;
 				z=j;
 			end
 		end
-		if z>0
-			c=0.8/csum;
-		else
+%		if z>0
+%			c=0.8/csum;
+%		else
 			c=1/csum;
-		end	
+%		end	
 		for j=1:m
 			if j~=z
 				WT(j)=c*(1/D(:,j));

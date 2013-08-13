@@ -48,7 +48,7 @@ REAL(KIND = R8), DIMENSION(MAX_N) :: weight ! A positive real array for
   ! SQRT(SUM( (X-Y)*diag(weight)*(X-Y) )).
 REAL(KIND = R8), DIMENSION(:), ALLOCATABLE :: X ! Minimizing vector.
 REAL(KIND = R8) :: wt ! weight for aggregating objectives
-REAL(KIND = R8), DIMENSION(12) :: c
+REAL(KIND = R8), DIMENSION(2) :: c
 REAL(KIND = R8) :: f
 REAL(KIND = R8), DIMENSION(:), ALLOCATABLE :: f1_t, f2_t, x1_t, x2_t
 TYPE(HyperBox), DIMENSION(:), ALLOCATABLE :: box_set ! An empty array of TYPE
@@ -81,7 +81,7 @@ data wts /0,0,1,0.33,0,1,0,0.33,1,0,0,0.34/
 ! Prepare the objective function names, problem dimensions, test results
 ! for verification.
 objnm = 'TT'
-Nv = 12
+Nv = 2
 
 	WRITE (*,*) "VTdirect test results:"
 	OPEN(UNIT=555, FILE='results1.dat', STATUS='OLD', POSITION='APPEND', IOSTAT=ierr)

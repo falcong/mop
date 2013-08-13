@@ -25,7 +25,7 @@
 				write(300,*) wts
 				close(300)
 !				write(400,*) x
-		      call nomad( 12 , 1 , x , lb , ub , 400 , 0 )
+		      call nomad( 12 , 1 , x , lb , ub , 100 , 0 )
 				write(*,*)'sol: ',x
 				write(400,*) x
 			end if
@@ -39,15 +39,15 @@
 
 
       subroutine bb(xx,fx)
-				!use TestObjSur_MOD
-				use TestObj_MOD
+				use TestObjSur_MOD
+				!use TestObj_MOD
 				use REAL_PRECISION
 				implicit none
 
 				real(kind = R8), dimension(12), intent(IN) :: xx
 				real(kind = R8), dimension(1), intent(OUT):: fx
 
-				!call TestObjSur(xx, fx)
-				call TestObj(xx, fx)
+				call TestObjSur(xx, fx)
+				!call TestObj(xx, fx)
 	      	return
 		end

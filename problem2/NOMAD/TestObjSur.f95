@@ -53,7 +53,7 @@
 	  close(222)
 
 
-		write(*,*)XT,' ',obj1,' ',obj2,' ',obj3
+		!write(*,*)XT,' ',obj1,' ',obj2,' ',obj3
 		open(500, file="RSMOutTest1.dat", status='old', position='APPEND')									
 		write(500,*)XT, obj1, obj2, obj3
 		close(500)

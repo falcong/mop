@@ -24,7 +24,6 @@ REAL(KIND = R8) :: f
 			c(indx1) = X(indx1,indx)
 		END DO
 		CALL TestObj(c,f)
-		WRITE(*,*) c,f
 	END DO
 !	CALL system('perl ./cplncnt.pl')
   DEALLOCATE(X)
