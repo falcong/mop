@@ -1,0 +1,17 @@
+XX=importdata('skyline.dat',' ');
+X=XX(:,ndv+1:ndv+3);
+ndv=20;
+n=size(X,1);
+Y=XX(:,ndv+1:ndv+2);
+for i=1:n
+	if X(i,3)<=0.0000000000001 
+		Y(i,1)=Y(i,1)-X(i,3)+1;
+		Y(i,2)=Y(i,2)-X(i,3)+1;
+		X(i,3)=X(i,3)-X(i,3)+1;
+	end
+		Y(i,1)=Y(i,1)/X(i,3);
+		Y(i,2)=Y(i,2)/X(i,3);
+end
+DT=DelaunayTri(Y);
+CL=ConnectivityList(DT);
+disp(CL);
