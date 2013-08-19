@@ -1,0 +1,20 @@
+#!/usr/local/bin/perl
+use Tie::File;
+tie @array, 'Tie::File', 'RSMInTest.dat' or die;
+open OUT, ">>", "skyline1.dat" or die;
+$NDV = 12;
+$M = 3;
+
+for $i(0..$#array){
+	@t = split(" ",$array[$i]);
+	for $j (0..$M-1){
+		if($t[$NDV+$j]<0.51){
+			foreach (@t){
+				print OUT $_," ";
+			}
+			print OUT "\n";
+			last;
+		}
+	}
+}
+close(OUT);

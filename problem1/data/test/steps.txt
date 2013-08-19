@@ -1,0 +1,4 @@
+steps
+1. runprep.sh for eval_lim=2000 and eps = 0.001 and 0.1
+2. run MADS for the entire design space [0,1]^d with #MADS_eval=200 for each 
+individual obj and 400 for f1+f2+f3

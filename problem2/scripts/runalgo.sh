@@ -16,17 +16,11 @@ perl /home/shubhangi/nomad.3.5.1/examples/interfaces/FORTRAN/MOP/problem2/script
 perl /home/shubhangi/nomad.3.5.1/examples/interfaces/FORTRAN/MOP/problem2/scripts/copylncnt.pl RSMOutTest.dat
 perl /home/shubhangi/nomad.3.5.1/examples/interfaces/FORTRAN/MOP/problem2/scripts/copylncnt.pl RSMOutTest1.dat
 
-#perl /home/shubhangi/nomad.3.5.1/examples/interfaces/FORTRAN/MOP/problem2/scripts/evalsur.pl
-#perl /home/shubhangi/nomad.3.5.1/examples/interfaces/FORTRAN/MOP/problem2/scripts/updtTR.pl
-
 /home/shubhangi/nomad.3.5.1/examples/interfaces/FORTRAN/MOP/problem2/VTDIRECT/tskyline
 cp blank.dat lshepwa.dat
 cp blank.dat RSMOutTest1.dat
 cp blank.dat RSMOutTest.dat
 
-cp RSMInTest.dat input.dat
+cp skyline.dat input.dat
 perl /home/shubhangi/nomad.3.5.1/examples/interfaces/FORTRAN/MOP/problem2/scripts/paretofront.pl
 
-
-
-#/home/shubhangi/nomad.3.5.1/examples/interfaces/FORTRAN/MOP/problem2/VTDIRECT/EvalSur

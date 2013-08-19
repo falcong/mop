@@ -91,7 +91,7 @@ if(flg)
 			if found
 				if YY(found,ndv+4)>0.02
 					disp('found');
-					YY(found,ndv+4)=YY(found,ndv+4)/4;
+					YY(found,ndv+4)=YY(found,ndv+4)/2;
 					dlta=YY(found,ndv+4);
 					dlmwrite('Xc.dat',YY,'delimiter',' ');								
 					Xc=Xi;
@@ -104,7 +104,7 @@ if(flg)
 			else
 				for i=1:size(YY,1)
 				%	disp(norm(XX(argmaxd,1:ndv)-YY(i,1:ndv),2));
-					disp(norm(XX(argmaxd,ndv+1:ndv+3)-YY(i,ndv+1:ndv+3),2));
+				%	disp(norm(XX(argmaxd,ndv+1:ndv+3)-YY(i,ndv+1:ndv+3),2));
 					if(norm(XX(argmaxd,1:ndv)-YY(i,1:ndv),2)<0.02 | norm(XX(argmaxd,ndv+1:ndv+3)-YY(i,ndv+1:ndv+3),2)<0.02) 
 						iflg=1;
 						break;

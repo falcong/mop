@@ -11,7 +11,7 @@ my(@t) = (0,0);
 my($lno) = 0;
 my($i) = 0;
 my($dummy) = 0;
-my($tol) = 0.00000001;
+my($tol) = 0.0000001;
 my($NDV) = 12;
 tie @array, 'Tie::File', $ifname or die;
 open OUT, ">", "skyline.dat" or die;
@@ -56,9 +56,10 @@ while(@array){
 		}
 	}
 
-	print OUT $b[0], " ", $b[1], " ", $b[2]," ", $b[3]," ", $b[4]," ", $b[5]," ", 
-	$b[6]," ", $b[7]," ", $b[8]," ", $b[9]," ", $b[10]," ", $b[11]," ", $b[12],
-	" ", $b[13]," ", $b[14],"\n";
+	for $j(0..$#b){	
+		print OUT $b[$j], " ";
+	}
+	print OUT "\n";
 
 	$numND = $numND+1;
 	$i = 0;

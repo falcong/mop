@@ -110,6 +110,7 @@ void nomad_ ( int    * n       ,          // # of variables
     // display degree:
     p.set_DISPLAY_DEGREE ( *display_degree );
 
+//	 p.set_LH_SEARCH ( 10, 10 );
     // parameters validation:
     p.check();
 
