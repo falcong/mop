@@ -1,0 +1,19 @@
+ g95 -freal-loops -o twrap $OPTS shared_modules.f95 VTdirect.f95 blas.f lapack.f linear_shepard.f95 TestWrapper.f95 TestObjSur.f95
+
+ g95 -freal-loops -o bstmain $OPTS shared_modules.f95 VTdirect.f95 blas.f lapack.f linear_shepard.f95 test_main_b.f95 TestObjSur.f95 TestObj.f95
+
+ g95 -freal-loops -o tmain $OPTS shared_modules.f95 VTdirect.f95 blas.f lapack.f linear_shepard.f95 test_main.f95 TestObjSur.f95 TestObj.f95
+
+g95 -freal-loops -o tmain $OPTS shared_modules.f95 VTdirect.f95 blas.f lapack.f linear_shepard.f95 test_main.f95 TestObj.f95
+
+g95 -freal-loops -o tmain $OPTS shared_modules.f95 VTdirect.f95 blas.f lapack.f test_main.f95 TestObj.f95
+
+g95 -o tskyline TestSkyline.o TestObj.o
+
+g95 -o GenSur blas.f lapack.f linear_shepard.f95 GenSur.f95
+
+g95 -o EvalSur EvalSur.o
+
+LIBRARY_PATH=/usr/lib/i386-linux-gnu/
+export LIBRARY_PATH
+
