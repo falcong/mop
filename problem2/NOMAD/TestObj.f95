@@ -63,10 +63,10 @@
 					exit
 				ELSE
 					do i=3,N,1
-						SumXi = SumXi + (X(i)-0.5)**2 - Cos(20*pi*(X(i)-0.5))
+						SumXi = SumXi + (X(i)-0.5)**2
 					end do
 					!write(*,*) 'Sum ',SumXi
-					g   = 100 * (10.0 + SumXi);
+					g   = SumXi
 					!write(*,*) 'g ',g
 					f1 = abs(Cos(X(1)*(pi/2))*Cos(X(2)*(pi/2))*(1+g))
 				  	f2  = abs(Cos(X(1)*(pi/2))*Sin(X(2)*(pi/2))*(1+g))

@@ -66,7 +66,7 @@
 						SumXi = SumXi + (X(i)-0.5)**2 - Cos(20*pi*(X(i)-0.5))
 					end do
 					!write(*,*) 'Sum ',SumXi
-					g   = 100 * (34.0 + SumXi);
+					g   = 100 * (10.0 + SumXi);
 					!write(*,*) 'g ',g
 					f1 = abs(Cos(X(1)*(pi/2))*Cos(X(2)*(pi/2))*(1+g))
 				  	f2  = abs(Cos(X(1)*(pi/2))*Sin(X(2)*(pi/2))*(1+g))
@@ -105,11 +105,15 @@
 			CLOSE(85)
 		END IF
 
+		OPEN(86, FILE="pflag.dat", STATUS='OLD')
+		read(86,*)pflag
+		close(86)
+
 		IF(iflag == 0.and.pflag>0) THEN
-			OPEN(86, FILE="skyline.dat", STATUS='OLD', POSITION='APPEND')
-			WRITE(86,*)X,f1,f2,f3
+			OPEN(87, FILE="skyline.dat", STATUS='OLD', POSITION='APPEND')
+			WRITE(87,*)X,f1,f2,f3
 		!	WRITE(*,*)'Write X:',X
-			CLOSE(86)
+			CLOSE(87)
 		END IF
 
 		DEALLOCATE(XX)

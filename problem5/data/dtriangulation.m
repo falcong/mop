@@ -7,14 +7,15 @@ n=size(X,1);
 Y=XX(:,ndv+1:ndv+M-1);
 Yc=zeros(M);
 for i=1:n
-	if X(i,M)<=0.0000000001 
+divby = X(i,M)+1;
+%	if X(i,M)<=0.0000000001 
+%		for j=1:M-1
+%			Y(i,j)=Y(i,j)-X(i,M)+1;
+%			X(i,M)=1;
+%		end
+%	end
 		for j=1:M-1
-			Y(i,j)=Y(i,j)-X(i,M)+1;
-			X(i,M)=1;
-		end
-	end
-		for j=1:M-1
-			Y(i,j)=Y(i,j)/X(i,M);
+			Y(i,j)=Y(i,j)/divby;
 		end
 end
 for i=1:M
@@ -48,7 +49,20 @@ if n<M
 		Xc=X(n,:);
 	end	
 else
-	E=delaunayn(Y);
+	dlmwrite('Y.dat',Y,'delimiter',' ');
+	system('perl ../scripts/rmdups.pl Y.dat');
+	%Y=unique(Y,'rows');
+	Y=importdata('Y.dat',' ');
+	DT=delaunayn(Y);
+	%Create edge list
+	[NN P]=size(DT);
+	E=[];
+	for k=1:P-1
+		 for r=(k+1):(P)
+		     E=[E;[DT(:,k),DT(:,r)]];
+		 end
+	end    
+	E=unique(E,'rows');
 %	E=DT.connectivityList;
 %	E=importdata('edges.dat',' ');
 	m=size(E,1);
@@ -72,13 +86,13 @@ if(flg)
 		         cnt = cnt+1;
 			  end
 		 end
-		if cnt>0
+		 if cnt>0
 			avgd=csum/cnt;
 			s=[i,avgd];
 			distmap(i,:)=s;
-		end
-		cnt=0;
-		csum=0.0;
+		 end
+		 cnt=0;
+		 csum=0.0;
 	end
 	distmap=sortrows(distmap,-2);
 	Xi=zeros(1,n);

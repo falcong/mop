@@ -432,6 +432,7 @@ DO K = 1, N
       END IF
    END IF
 END DO
+
 ! I = 0 iff the point XP is not within the radius RW(K) of X(:,K) for all K; 
 ! IER = 1.
 IF ( I == 0 ) THEN

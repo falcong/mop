@@ -6,13 +6,14 @@ n=size(X,1);
 Y=XX(:,ndv+1:ndv+2);
 Yc=zeros(3);
 for i=1:n
-	if X(i,3)<=0.0000000001 
-		Y(i,1)=Y(i,1)-X(i,3)+1;
-		Y(i,2)=Y(i,2)-X(i,3)+1;
-		X(i,3)=X(i,3)-X(i,3)+1;
-	end
-		Y(i,1)=Y(i,1)/X(i,3);
-		Y(i,2)=Y(i,2)/X(i,3);
+divby=X(i,3)+1;
+%	if X(i,3)<=0.0000000001 
+%		Y(i,1)=Y(i,1)-X(i,3)+1;
+%		Y(i,2)=Y(i,2)-X(i,3)+1;
+%		X(i,3)=1;
+%	end
+		Y(i,1)=Y(i,1)/divby;
+		Y(i,2)=Y(i,2)/divby;
 end
 A=[0,0,1;0,1,0;1,0,0];
 dlmwrite('wtA.dat',A,'delimiter',' ');
@@ -89,7 +90,7 @@ if(flg)
 				end
 			end
 			if found
-				if YY(found,ndv+4)>0.02
+				if YY(found,ndv+4)>0.05
 					disp('found');
 					YY(found,ndv+4)=YY(found,ndv+4)/2;
 					dlta=YY(found,ndv+4);

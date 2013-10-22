@@ -96,7 +96,7 @@
 
 		
 !		OBJ = wt(1)*f1+wt(2)*f2+wt(3)*f3
-		OBJ = f3
+		OBJ = f1+f2+f3
 
 		IF(iflag == 0) THEN
 			OPEN(85, FILE="RSMInTest.dat", STATUS='OLD', POSITION='APPEND')

@@ -24,5 +24,6 @@ cp blank.dat RSMOutTest.dat
 cp skyline.dat input.dat
 perl /home/shubhangi/nomad.3.5.1/examples/interfaces/FORTRAN/MOP/problem5/scripts/paretofront.pl
 
+perl /home/shubhangi/nomad.3.5.1/examples/interfaces/FORTRAN/MOP/problem5/scripts/updtSkyline.pl 
 
 #/home/shubhangi/nomad.3.5.1/examples/interfaces/FORTRAN/MOP/problem5/VTDIRECT/EvalSur

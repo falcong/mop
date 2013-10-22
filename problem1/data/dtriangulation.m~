@@ -89,7 +89,7 @@ if(flg)
 				end
 			end
 			if found
-				if YY(found,ndv+4)>0.01
+				if YY(found,ndv+4)>0.05
 					disp('found');
 					YY(found,ndv+4)=YY(found,ndv+4)/2;
 					dlta=YY(found,ndv+4);

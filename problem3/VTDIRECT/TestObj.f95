@@ -9,7 +9,7 @@
 
 		!local variables
 		INTEGER::i, j, N, M, K, cnt, infeasible
-		INTEGER::iflag
+		INTEGER::iflag, pflag
 		INTEGER:: ierr ! Error status for file I/O.
 		REAL(KIND = R8)::tol
 		REAL(KIND = R8), DIMENSION(:), ALLOCATABLE :: XX
@@ -26,6 +26,7 @@
 
 		tol = 1.0e-13
 		iflag = 0
+		pflag = 0
 		cnt = 0
 		N = 20
 		M = 3
@@ -106,6 +107,18 @@
 			WRITE(85,*)X,f1,f2,f3
 	!		WRITE(*,*)'Write X:',X
 			CLOSE(85)
+		END IF
+
+
+		OPEN(86, FILE="pflag.dat", STATUS='OLD')
+		READ(86,*) pflag
+		CLOSE(86)
+
+		IF((iflag == 0).and.(pflag>0)) THEN
+			OPEN(87, FILE="skyline.dat", STATUS='OLD', POSITION='APPEND')
+			WRITE(87,*)X,f1,f2,f3
+		!	WRITE(*,*)'Write X:',X
+			CLOSE(87)
 		END IF
 
 		DEALLOCATE(XX)
